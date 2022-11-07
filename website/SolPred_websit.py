@@ -15,7 +15,7 @@ from streamlit_lottie import st_lottie
 #==========================================================================================================================================
 
 # load the model with pickle
-predicting_model = pickle.load(open('stack_model_pickle', 'rb'))
+predicting_model = pickle.load(open('stack_model_pickle.pickle', 'rb'))
 
 # fuction to generate the descriptors
 @st.cache
@@ -57,17 +57,17 @@ def generate_descriptors(*smiles):
 
 # function to predict the solubility
 @st.cache
-def SoulPred(*smiles):
-  soulpred_data = pd.DataFrame(columns=['SMILES', 'Chemical_Formula', 
+def SolPred(*smiles):
+  solpred_data = pd.DataFrame(columns=['SMILES', 'Chemical_Formula', 
   'Predicited_LogS', 'Predicited_Solubility (g/l)','MolWt', 'NumRotatableBonds', 'NumHAcceptors', 'NumHDonors', 
   'NumHeteroatoms', 'NumValenceElectrons', 'NumAromaticRings',
   'NumAliphaticRings', 'RingCount'
   ])
   for smile in smiles: 
     if Chem.MolFromSmiles(smile) is None:
-      soulpred_data.loc[len(soulpred_data)] = [smile] + [None for i in range(len(soulpred_data.columns)-1)]
+      solpred_data.loc[len(solpred_data)] = [smile] + [None for i in range(len(solpred_data.columns)-1)]
     else:
-      soulpred_data.loc[len(soulpred_data)] = [
+      solpred_data.loc[len(solpred_data)] = [
                             smile, 
                             CalcMolFormula(Chem.MolFromSmiles(smile)), 
                             round(predicting_model.predict(generate_descriptors(smile))[0], 2),
@@ -83,13 +83,13 @@ def SoulPred(*smiles):
                             generate_descriptors(smile)['RingCount'][0],
                             ]       
 
-  return soulpred_data
+  return solpred_data
 
 #==========================================================================================================================================
 #==========================================================================================================================================
 # Streamlit page configuration
 st.set_page_config(
-    page_title="SoulPred",
+    page_title="SolPred",
     page_icon="chemical.png",
     layout="wide",
     initial_sidebar_state='collapsed',
@@ -127,7 +127,7 @@ st.sidebar.markdown('''
 ---
 Created with ❤️ by [Shalash](https://twitter.com/__shalash__).
 
-You can find the source code on my [GitHub](https://github.com/Shalash96/SoulPred)
+You can find the source code on my [GitHub](https://github.com/Shalash96/SolPred)
 ''')
 
 
@@ -142,9 +142,9 @@ if predict_button_sidebar or st.session_state.predict_button_sidebar:
   st.session_state.predict_button_sidebar = True
   if len(smiles_input) > 0:
     st.header('Predicted data of the input SMILES')
-    predicted_values_from_input = SoulPred(*smiles_input)
+    predicted_values_from_input = SolPred(*smiles_input)
     st.dataframe(predicted_values_from_input)
-    download_button = st.download_button("Download as CSV", data=predicted_values_from_input.to_csv(index=False).encode('utf-8'), file_name='SoulPred(@__shalash__).csv', mime='text/csv')
+    download_button = st.download_button("Download as CSV", data=predicted_values_from_input.to_csv(index=False).encode('utf-8'), file_name='SolPred(@__shalash__).csv', mime='text/csv')
   
   else:
     st.error('Please enter a valid SMILES string in the text input in the sidebar to predict the solubility or to view the 3D structure of the molecule')
@@ -217,8 +217,8 @@ if upload_button or st.session_state.upload_button:
     uploaded_file = pd.read_csv(upload_button)
     if 'SMILES' in uploaded_file.columns:
       smiles_from_upload = uploaded_file['SMILES'].tolist()
-      predicted_values_from_upload = SoulPred(*smiles_from_upload)
-      download_button = st.download_button("Download as CSV", data=predicted_values_from_upload.to_csv(index=False).encode('utf-8'), file_name='SoulPred(@__shalash__).csv', mime='text/csv')
+      predicted_values_from_upload = SolPred(*smiles_from_upload)
+      download_button = st.download_button("Download as CSV", data=predicted_values_from_upload.to_csv(index=False).encode('utf-8'), file_name='SolPred(@__shalash__).csv', mime='text/csv')
       st.dataframe(predicted_values_from_upload.style.format(precision=2))
 
     else:
