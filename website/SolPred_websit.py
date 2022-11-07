@@ -15,7 +15,7 @@ from streamlit_lottie import st_lottie
 #==========================================================================================================================================
 
 # load the model with pickle
-predicting_model = pickle.load(open('stack_model_pickle.pickle', 'rb'))
+predicting_model = pickle.load(open('website/stack_model_pickle.pickle', 'rb'))
 
 # fuction to generate the descriptors
 @st.cache
