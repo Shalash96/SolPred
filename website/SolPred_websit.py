@@ -90,7 +90,7 @@ def SolPred(*smiles):
 # Streamlit page configuration
 st.set_page_config(
     page_title="SolPred",
-    page_icon="chemical.png",
+    page_icon="website/chemical.png",
     layout="wide",
     initial_sidebar_state='collapsed',
 )
@@ -106,7 +106,7 @@ footer {visibility: hidden;}
 #==========================================================================================================================================
 # The sidebar configuration
 sidebar = st.sidebar
-sidebar.title("S O U L P R E D")
+sidebar.title("S O L P R E D")
 sidebar.subheader('Input SMILES string')
 sidebar.caption('In case of multiple SMILES string, please separate them with a comma')
 
