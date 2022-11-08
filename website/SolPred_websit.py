@@ -167,7 +167,7 @@ with right:
     if len(smiles_input) > 0:
       mol_number = st.number_input('Index of the molecule to view', min_value=0, max_value=len(smiles_input)-1, value=0, step=1, key='mol_index')
       style = st.selectbox('The prefered style to show the molecule',['stick','line','sphere', 'cross'])
-      color_bg = st.color_picker('Background color', '#0A0A0A')
+      color_bg = st.color_picker('Background color', '#FFFFFF')
       spin = st.checkbox('Spin', value=False)
       
     else:
