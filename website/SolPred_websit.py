@@ -197,7 +197,7 @@ with left:
 
       xyzview.zoomTo()
       # xyzview.png()
-      showmol(xyzview,height=500,width=350)
+      showmol(xyzview,height=400,width=300)
     try:
       mol_viewer(smiles_input[mol_number])
     except:
