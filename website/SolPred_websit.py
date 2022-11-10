@@ -249,8 +249,12 @@ if not st.session_state.predict_button_sidebar and not st.session_state.show_mol
   1. Enter the SMILES string of the molecule in the text input in the sidebar then click on the "Predict" button. There is a molecule already entered as an example.
   2. You can also upload a CSV file containing the SMILES strings of the molecules in a column named "SMILES". 
   3. You can also view the 3D structure of the molecule by clicking on the "Show 3D structure" button in the sidebar.
-  4. Enjoy using the app and don't forget to share it with your friends and colleagues. All feedbacks are highly appreciated.
-
+  
+  ### Model Training
+  The model was trained over [10397 unique compounds](https://github.com/Shalash96/SolPred/tree/main/DataCuration) and it has the accuracy of [R^2 equals 0.775817 2. MAE equals 0.731621 3. RMSD equals 1.094537](https://github.com/Shalash96/SolPred/tree/main/ModelTraining).
+  For any feedbck or improvement advice, you can either send me and [email](mmshalash.outlook.com) or send me a DM on [Twitter](https://twitter.com/__shalash__) 
+  
+  **Enjoy using the app and don't forget to share it with your friends and colleagues**
   """)
 
   res_lottie = load_lottieurl(url)
