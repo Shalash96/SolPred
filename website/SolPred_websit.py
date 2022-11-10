@@ -125,7 +125,7 @@ sidebar.caption('The file should have a column named "SMILES"')
 upload_button = sidebar.file_uploader("Upload CSV", label_visibility='collapsed', type=['csv', 'txt'])
 st.sidebar.markdown('''
 ---
-Created with ❤️ by [Shalash](https://twitter.com/__shalash__).
+Created with ❤️ by [Shalash](https://shalash96.github.io/).
 
 You can find the source code on my [GitHub](https://github.com/Shalash96/SolPred)
 ''')
