@@ -7,3 +7,8 @@
         1. DecisionTreeRegressor(max_depth=9)
         2. HistGradientBoostingRegressor(max_depth=21)
         3. RandomForestRegressor(n_estimators=29)
+
+The model evalauation is:
+        1. R^2 equals 0.775817
+        2. MAE equals 0.731621
+        3. RMSD equals 1.094537
