@@ -7,10 +7,10 @@ I collected data from 4 databases:
 4. [Junmei Wang, George Krudy, Tingjun Hou, Wei Zhang, George Holland, and Xiaojie Xu 2007](https://pubs.acs.org/doi/full/10.1021/ci700096r?casa_token=JQmRIoLinscAAAAA%3AMc43u7KVHSyUOa_fW6BfMvKWnoQ3HnPFpgvKqkb4E1daBmN83DPibzG67zAEDf1-GkG9GExjCEYkbvE-) dataset. It contains 1708 unique compound. For some reason the SMILES provided in this dataset were incorrect and RDKit did not read it, but I found a [sdf file](http://modem.ucsd.edu/adme/databases/databases_logS.htm) which I used to generated RDKit elements then valid SMILES.
 
 # Data Curation
-- I organized the data inside the 4 datasets to have the same forum which consists of 19 columns. 18 columns are the numerical data and a column for SMILES.
+- I organized the data inside the 4 datasets to have the same form which consists of 19 columns. 18 columns are the numerical data and a column for SMILES.
 
 | SMILES | Solubility | MolWt | MolLogP | MolMR | HeavyAtomCount | NumHAcceptors | NumHDonors | NumHeteroatoms | NumRotatableBonds | NumValenceElectrons | NumAromaticRings | NumSaturatedRings | NumAliphaticRings | RingCount | TPSA | LabuteASA | BalabanJ | BertzCT |
 |--------|------------|------:|--------:|------:|---------------:|--------------:|-----------:|---------------:|------------------:|--------------------:|-----------------:|------------------:|------------------:|----------:|-----:|----------:|---------:|--------:|
 
 - I then merged the 4 datasets together into one big dataset. It contained 13934 molecule, then I removed duplicated moleules based on SMILES column to have 11714 compound. 
-- But there isone problem with SMILES that some compounds can have many valied SMILES, so it good to change SMILES to canonical smiles then droup duplicates, after this I got 10379 unique SMILES which are then saved to the mega dataset that will be used then for the model training.
+- But there is one problem with SMILES that some compounds can have many valied SMILES, so it good to change SMILES to canonical smiles then droup duplicates, after this I got 10379 unique SMILES which are then saved to the mega dataset that will be used then for the model training.
