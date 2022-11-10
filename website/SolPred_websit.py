@@ -251,8 +251,10 @@ if not st.session_state.predict_button_sidebar and not st.session_state.show_mol
   3. You can also view the 3D structure of the molecule by clicking on the "Show 3D structure" button in the sidebar.
   
   ### Model Training
-  The model was trained over [10397 unique compounds](https://github.com/Shalash96/SolPred/tree/main/DataCuration) and it has the accuracy of [R^2 equals 0.775817 2. MAE equals 0.731621 3. RMSD equals 1.094537](https://github.com/Shalash96/SolPred/tree/main/ModelTraining).
-  For any feedbck or improvement advice, you can either send me and [email](mmshalash.outlook.com) or send me a DM on [Twitter](https://twitter.com/__shalash__) 
+  The model was trained over [10397 unique compounds](https://github.com/Shalash96/SolPred/tree/main/DataCuration) and it has the accuracy of 
+  [R^2 equals 0.775817, MAE equals 0.731621 and RMSD equals 1.094537](https://github.com/Shalash96/SolPred/tree/main/ModelTraining).
+  
+  For any feedbck or improvement advice, you can either send me an [Email](mailto:mmshalash.outlook.com) or a DM on [Twitter](https://twitter.com/__shalash__) 
   
   **Enjoy using the app and don't forget to share it with your friends and colleagues**
   """)
