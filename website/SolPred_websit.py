@@ -243,7 +243,7 @@ if not st.session_state.predict_button_sidebar and not st.session_state.show_mol
   # Welcome to SolPred
   The name derived from the word "Solubility" and "Prediction"
   ## It is a web app to predict the solubility of molecules using machine learning models. 
-  ## It is easy to use just use the SMILES string.
+  ## JUST SMILE :)
 
   ### How to use it?
   First open the sidebar from the left side by clicking on the small arrow at the top of the page then you will be able to:
