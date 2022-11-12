@@ -5,7 +5,7 @@ The name derived from the word "Solubility" and "Prediction"
 ## It is a web app to predict the solubility of molecules using machine learning models.
 ### EASY TO USE JUST SMILE :)
 ## How to use it?
-First open the sidebar from the left side by clicking on the small arrow at the top of the page then you will be able to:
+You can try the app from [here](https://shalash-solpred.streamlit.app/) then open the sidebar from the left side by clicking on the small arrow at the top of the page then you will be able to:
 
 1. Enter the SMILES string of the molecule in the text input in the sidebar then click on the "Predict" button. There is a molecule already entered as an example.
 2. You can also upload a CSV file containing the SMILES strings of the molecules in a column named "SMILES".
